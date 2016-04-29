@@ -4,10 +4,10 @@
  * available under the terms of the Eclipse Public License v1.0 which
  * accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
- * 
+ *
  * Toast is an Equinox/OSGi system developed for the book Eclipse, Equinox and
  * OSGi - Creating Highly Modular Java Applications See http://equinoxosgi.org
- * 
+ *
  * Contributors: Paul VanderLei, Simon Archer and Jeff McAffer - initial API and
  * implementation
  *******************************************************************************/
@@ -27,6 +27,7 @@ public class Activator implements BundleActivator {
 	private ServiceReference gpsRef;
 	private EmergencyMonitor monitor;
 
+// tag::start[]
 	public void start(BundleContext context) throws Exception {
 		System.out.println("Launching");
 		monitor = new EmergencyMonitor();
@@ -46,7 +47,9 @@ public class Activator implements BundleActivator {
 		monitor.setAirbag(airbag);
 		monitor.startup();
 	}
+// end::start[]
 
+// tag::stop[]
 	public void stop(BundleContext context) throws Exception {
 		monitor.shutdown();
 		if (gpsRef != null)
@@ -55,4 +58,5 @@ public class Activator implements BundleActivator {
 			context.ungetService(airbagRef);
 		System.out.println("Terminating");
 	}
+// end::stop[]
 }
