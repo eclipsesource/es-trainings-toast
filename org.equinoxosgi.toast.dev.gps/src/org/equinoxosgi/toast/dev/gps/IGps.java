@@ -13,20 +13,12 @@
  *******************************************************************************/
 package org.equinoxosgi.toast.dev.gps;
 
-public class Gps {
-	public int getHeading() {
-		return 90; // 90 degrees (east)
-	}
+public interface IGps {
+	public abstract int getHeading();
 
-	public int getLatitude() {
-		return 3888746; // 38.88746 N
-	}
+	public abstract int getLatitude();
 
-	public int getLongitude() {
-		return -7702192; // 77.02192 W
-	}
+	public abstract int getLongitude();
 
-	public int getSpeed() {
-		return 50; // 50 kph
-	}
+	public abstract int getSpeed();
 }

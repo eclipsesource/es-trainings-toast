@@ -11,35 +11,23 @@
  * Contributors: Paul VanderLei, Simon Archer and Jeff McAffer - initial API and
  * implementation
  *******************************************************************************/
-package org.equinoxosgi.toast.client.emergency;
+package org.equinoxosgi.toast.internal.dev.gps.fake.bundle;
 
-import org.equinoxosgi.toast.dev.airbag.Airbag;
-import org.equinoxosgi.toast.dev.airbag.IAirbagListener;
-import org.equinoxosgi.toast.dev.gps.Gps;
+import org.equinoxosgi.toast.dev.gps.IGps;
+import org.equinoxosgi.toast.internal.dev.gps.fake.FakeGps;
+import org.osgi.framework.BundleActivator;
+import org.osgi.framework.BundleContext;
+import org.osgi.framework.ServiceRegistration;
 
-public class EmergencyMonitor implements IAirbagListener {
-	private Airbag airbag;
-	private Gps gps;
+public class Activator implements BundleActivator {
+	private ServiceRegistration registration;
 
-	public void deployed() {
-		System.out.println("Emergency occurred at lat=" + gps.getLatitude()
-				+ " lon=" + gps.getLongitude() + " heading=" + gps.getHeading()
-				+ " speed=" + gps.getSpeed());
+	public void start(BundleContext context) {
+		FakeGps gps = new FakeGps();
+		registration = context.registerService(IGps.class.getName(), gps, null);
 	}
 
-	public void setAirbag(Airbag value) {
-		airbag = value;
-	}
-
-	public void setGps(Gps value) {
-		gps = value;
-	}
-
-	public void shutdown() {
-		airbag.removeListener(this);
-	}
-
-	public void startup() {
-		airbag.addListener(this);
+	public void stop(BundleContext context) {
+		registration.unregister();
 	}
 }
