@@ -36,14 +36,10 @@ public class EmergencyMonitor implements IAirbagListener {
 	}
 
 	public void shutdown() {
-		if (airbag != null) {
-			airbag.removeListener(this);
-		}
+		airbag.removeListener(this);
 	}
 
 	public void startup() {
-		if (airbag != null) {
-			airbag.addListener(this);
-		}
+		airbag.addListener(this);
 	}
 }
