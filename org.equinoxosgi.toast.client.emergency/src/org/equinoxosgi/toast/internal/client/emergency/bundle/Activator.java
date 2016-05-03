@@ -27,7 +27,6 @@ public class Activator implements BundleActivator {
 	private ServiceReference gpsRef;
 	private EmergencyMonitor monitor;
 
-// tag::start[]
 	public void start(BundleContext context) throws Exception {
 		System.out.println("Launching");
 		monitor = new EmergencyMonitor();
@@ -47,9 +46,7 @@ public class Activator implements BundleActivator {
 		monitor.setAirbag(airbag);
 		monitor.startup();
 	}
-// end::start[]
 
-// tag::stop[]
 	public void stop(BundleContext context) throws Exception {
 		monitor.shutdown();
 		if (gpsRef != null)
@@ -58,5 +55,4 @@ public class Activator implements BundleActivator {
 			context.ungetService(airbagRef);
 		System.out.println("Terminating");
 	}
-// end::stop[]
 }
