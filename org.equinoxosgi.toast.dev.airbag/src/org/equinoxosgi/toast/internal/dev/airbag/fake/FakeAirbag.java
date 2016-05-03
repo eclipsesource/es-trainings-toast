@@ -17,6 +17,7 @@ import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
 
+import org.apache.log4j.Logger;
 import org.eclipse.core.runtime.IProgressMonitor;
 import org.eclipse.core.runtime.IStatus;
 import org.eclipse.core.runtime.Status;
@@ -29,11 +30,14 @@ public class FakeAirbag implements IAirbag {
 	private Job job;
 	private boolean isRunning;
 
+	private Logger logger = Logger.getLogger(getClass());
+
 	public synchronized void addListener(IAirbagListener listener) {
 		listeners.add(listener);
 	}
 
 	private synchronized void deploy() {
+		logger.debug("Deployed airbag");
 		for (Iterator i = listeners.iterator(); i.hasNext();)
 			((IAirbagListener) i.next()).deployed();
 	}

@@ -4,7 +4,9 @@ Bundle-Name: Toast Airbag
 Bundle-SymbolicName: org.equinoxosgi.toast.dev.airbag
 Bundle-Version: 1.0.0
 Bundle-RequiredExecutionEnvironment: J2SE-1.4
-Export-Package: org.equinoxosgi.toast.dev.airbag;version="1.0.0"
-Import-Package: org.eclipse.core.runtime.jobs
+Export-Package: org.equinoxosgi.toast.dev.airbag
+Import-Package: org.apache.log4j;version="1.2.13",
+ org.eclipse.core.runtime.jobs
 Service-Component: OSGI-INF/component.xml
 Require-Bundle: org.eclipse.equinox.common;bundle-version="3.5.0"
+Eclipse-RegisterBuddy: org.apache.log4j
