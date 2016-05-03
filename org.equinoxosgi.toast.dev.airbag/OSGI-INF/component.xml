@@ -1,4 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
+<!-- tag::scr[] -->
 <scr:component xmlns:scr="http://www.osgi.org/xmlns/scr/v1.1.0"
     immediate="false" name="org.equinoxosgi.toast.dev.airbag"
     activate="startup" deactivate="shutdown">
@@ -8,4 +9,4 @@
     <provide interface="org.equinoxosgi.toast.dev.airbag.IAirbag"/>
   </service>
 </scr:component>
-
+<!-- end::scr[] -->
