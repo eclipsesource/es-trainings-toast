@@ -1,4 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
+<!-- tag::scr[] -->
 <scr:component xmlns:scr="http://www.osgi.org/xmlns/scr/v1.1.0"
    enabled="true" immediate="false" name="org.equinoxosgi.toast.dev.gps">
   <implementation
@@ -7,3 +8,4 @@
      <provide interface="org.equinoxosgi.toast.dev.gps.IGps"/>
    </service>
 </scr:component>
+<!-- end::scr[] -->

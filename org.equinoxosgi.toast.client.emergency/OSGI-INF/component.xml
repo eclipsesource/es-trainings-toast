@@ -1,4 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
+<!-- tag::scr[] -->
 <scr:component xmlns:scr="http://www.osgi.org/xmlns/scr/v1.1.0"
     enabled="true" immediate="true"
     name="org.equinoxosgi.toast.client.emergency"
@@ -8,4 +9,4 @@
   <reference bind="setAirbag" interface="org.equinoxosgi.toast.dev.airbag.IAirbag" name="airbag"/>
   <reference bind="setGps" interface="org.equinoxosgi.toast.dev.gps.IGps" name="gps"/>
 </scr:component>
-
+<!-- end::scr[] -->
