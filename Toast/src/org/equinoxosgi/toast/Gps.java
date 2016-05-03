@@ -4,15 +4,16 @@
  * available under the terms of the Eclipse Public License v1.0 which
  * accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
- * 
+ *
  * Toast is an Equinox/OSGi system developed for the book Eclipse, Equinox and
  * OSGi - Creating Highly Modular Java Applications See http://equinoxosgi.org
- * 
+ *
  * Contributors: Paul VanderLei, Simon Archer and Jeff McAffer - initial API and
  * implementation
  *******************************************************************************/
 package org.equinoxosgi.toast;
 
+// tag::type[]
 public class Gps {
 	public int getHeading() {
 		return 90; // 90 degrees (east)
@@ -30,3 +31,4 @@ public class Gps {
 		return 50; // 50 kph
 	}
 }
+// end::type[]
