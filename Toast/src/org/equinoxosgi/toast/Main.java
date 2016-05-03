@@ -1,5 +1,6 @@
 package org.equinoxosgi.toast;
 
+// tag::type[]
 public class Main {
 	public static void main(String[] args) {
 		System.out.println("Launching");
@@ -14,3 +15,4 @@ public class Main {
 		System.out.println("Terminating");
 	}
 }
+// end::type[]
