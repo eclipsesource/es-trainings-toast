@@ -4,15 +4,16 @@
  * available under the terms of the Eclipse Public License v1.0 which
  * accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
- * 
+ *
  * Toast is an Equinox/OSGi system developed for the book Eclipse, Equinox and
  * OSGi - Creating Highly Modular Java Applications See http://equinoxosgi.org
- * 
+ *
  * Contributors: Paul VanderLei, Simon Archer and Jeff McAffer - initial API and
  * implementation
  *******************************************************************************/
 package org.equinoxosgi.toast;
 
+// tag::type[]
 public class EmergencyMonitor implements IAirbagListener {
 	private Airbag airbag;
 	private Gps gps;
@@ -39,3 +40,4 @@ public class EmergencyMonitor implements IAirbagListener {
 		airbag.addListener(this);
 	}
 }
+// end::type[]
